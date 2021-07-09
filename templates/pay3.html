@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Страница оплаты RUB{% endblock %}
+
+{% block content %}
+<main class="container">
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form method="{{method}}" action="{{url}}">
+                    <input type="hidden" name="id" value="{{id}}" />
+                    <input type="hidden" name="ac_account_email" value="{{ac_account_email}}"/>
+                    <input type="hidden" name="ac_sci_name" value="{{ac_sci_name}}"/>
+                    <input type="hidden" name="ac_amount" value="{{ac_amount}}"/>
+                    <input type="hidden" name="ac_currency" value="{{ac_currency}}"/>
+                    <input type="hidden" name="ac_order_id" value="{{ac_order_id}}"/>
+                    <input type="hidden" name="ac_sub_merchant_url" value="{{ac_sub_merchant_url}}"/>
+                    <input type="hidden" name="ac_sign" value="{{ac_sign}}"/>
+                    <input type="submit"/>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Страница оплаты EUR{% endblock %}
+
+{% block content %}
+<main class="container">
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <form name="Pay" method="post" action="https://pay.piastrix.com/ru/pay" accept-charset="UTF-8">
+                    <input type="hidden" name="amount" value="{{value}}"/>
+                    <input type="hidden" name="currency" value="{{currency}}"/>
+                    <input type="hidden" name="shop_id" value="{{shop_id}}"/>
+                    <input type="hidden" name="description" value="{{description}}"/>
+                    <input type="hidden" name="sign" value="{{hex_dig}}"/>
+                    <input type="hidden" name="shop_order_id" value="{{payment_id}}"/>
+                <input type="submit"/> <input type="hidden" name="description" value="Test invoice"/> </form>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

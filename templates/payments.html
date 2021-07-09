@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Все платежи{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="py-5 text-center">
+    <h1>Все платежи на сайті</h1>
+    </div>
+    {% if payments %}
+    {% for a in payments %}
+    <div class="alert alert-info">
+        <h2>{{a.value}} {{a.currency}}</h2>
+        <p>{{a.description}}</p>
+        <em>Дата : {{a.time_create}}</em>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="alert alert-info">
+        <h2>На сайте нету платежей</h2>
+        <a href="/" class="btn btn-success">Создать</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

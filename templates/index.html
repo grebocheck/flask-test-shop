@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Страница оплаты{% endblock %}
+
+{% block content %}
+<main class="container">
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Создать платеж</h1>
+                <form name="Pay" method="post" action="/pay" accept-charset="UTF-8">
+                    <div class="input-group mb-3">
+                      <select class="custom-select form-control" required id="inputGroupSelect01" name="currency">
+                        <option selected>RUB</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                      </select>
+                      <input type="number" name='value' required class="form-control" placeholder="Введите сумму..." step=".01">
+                    </div>
+                    <div class="input-group">
+                      <textarea class="form-control" required name="description" placeholder="Описание..." aria-label="With textarea"></textarea>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <input class="form-control btn-primary" type="submit"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
